@@ -10,16 +10,9 @@ There is no asset editor and no painted-frame pipeline. A coding agent authors c
 
 ![Open-Voxel home dashboard](doc/home.png)
 
-### Studio Walkthrough
+### Studio
 
-A short tour of the unit studio featuring the Burmese Bilu.
-
-<video controls muted loop playsinline preload="metadata" width="100%">
-  <source src="doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4" type="video/mp4" />
-  Your browser does not support embedded video. <a href="doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4">Watch the demo video</a>.
-</video>
-
-[Watch the Burmese Bilu studio demo](doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4)
+![Open-Voxel studio](doc/studio.png)
 
 ## Features
 
