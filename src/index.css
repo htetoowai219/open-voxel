@@ -1,0 +1,218 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    --background: 250 250 250;
+    --foreground: 24 24 27;
+    --canvas: 244 244 245;
+    --sidebar: 250 250 250;
+    --sidebar-foreground: 24 24 27;
+    --card: 255 255 255;
+    --card-foreground: 24 24 27;
+    --popover: 255 255 255;
+    --popover-foreground: 24 24 27;
+    --primary: 24 24 27;
+    --primary-foreground: 250 250 250;
+    --secondary: 244 244 245;
+    --secondary-foreground: 24 24 27;
+    --muted: 244 244 245;
+    --muted-foreground: 113 113 122;
+    --accent: 238 242 255;
+    --accent-foreground: 30 64 175;
+    --destructive: 220 38 38;
+    --border: 228 228 231;
+    --hairline: 244 244 245;
+    --input: 228 228 231;
+    --ring: 37 99 235;
+    --brand: 37 99 235;
+    --brand-foreground: 255 255 255;
+    --brand-soft: rgba(37, 99, 235, 0.1);
+  }
+
+  .dark {
+    color-scheme: dark;
+
+    --background: 9 9 11;
+    --foreground: 244 244 245;
+    --canvas: 18 18 21;
+    --sidebar: 9 9 11;
+    --sidebar-foreground: 244 244 245;
+    --card: 24 24 27;
+    --card-foreground: 244 244 245;
+    --popover: 30 30 33;
+    --popover-foreground: 244 244 245;
+    --primary: 244 244 245;
+    --primary-foreground: 9 9 11;
+    --secondary: 39 39 42;
+    --secondary-foreground: 244 244 245;
+    --muted: 39 39 42;
+    --muted-foreground: 161 161 170;
+    --accent: 30 41 59;
+    --accent-foreground: 147 197 253;
+    --destructive: 248 113 113;
+    --border: 39 39 42;
+    --hairline: 30 30 33;
+    --input: 63 63 70;
+    --ring: 96 165 250;
+    --brand: 96 165 250;
+    --brand-foreground: 9 9 11;
+    --brand-soft: rgba(96, 165, 250, 0.14);
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    @apply m-0 overflow-hidden bg-background font-sans text-foreground;
+    font-size: 14px;
+    letter-spacing: -0.006em;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+  }
+
+  button:focus-visible,
+  select:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible {
+    outline: 2px solid rgb(var(--ring) / 0.55);
+    outline-offset: 1px;
+  }
+
+  ::selection {
+    background: var(--brand-soft);
+    color: rgb(var(--foreground));
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(var(--muted-foreground) / 0.25) transparent;
+  }
+
+  *::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: rgb(var(--muted-foreground) / 0.22);
+    border-radius: 999px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[10px] font-medium uppercase tracking-[0.14em] text-muted-foreground;
+  }
+
+  .folio {
+    @apply font-mono text-[10.5px] tabular-nums tracking-[0.04em] text-muted-foreground;
+  }
+
+  .panel {
+    @apply rounded-[8px] border border-border bg-card text-foreground shadow-edge;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-[5px] border border-border bg-muted/60 px-2 py-0.5 font-mono text-[10.5px] text-muted-foreground;
+  }
+
+  .icon-button {
+    @apply inline-flex size-7 items-center justify-center rounded-[5px] border border-border bg-card text-muted-foreground transition duration-100 hover:bg-muted hover:text-foreground disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-primary {
+    @apply inline-flex h-8 items-center justify-center gap-1.5 rounded-[6px] bg-primary px-3 text-[12.5px] font-medium text-primary-foreground transition duration-100 hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-secondary {
+    @apply inline-flex h-8 items-center justify-center gap-1.5 rounded-[6px] border border-border bg-card px-3 text-[12.5px] font-medium text-foreground transition duration-100 hover:bg-muted disabled:cursor-not-allowed disabled:opacity-40;
+  }
+
+  .btn-ghost {
+    @apply inline-flex h-8 items-center justify-center gap-1.5 rounded-[6px] px-2.5 text-[12.5px] font-medium text-muted-foreground transition duration-100 hover:bg-muted hover:text-foreground;
+  }
+
+  .field {
+    @apply w-full rounded-[6px] border border-border bg-background px-3 py-1.5 text-[12.5px] text-foreground placeholder:text-muted-foreground focus:border-foreground/30 focus:outline-none;
+  }
+
+  .seg-button {
+    @apply inline-flex h-7 items-center justify-center gap-1.5 rounded-[5px] border border-transparent px-2 font-mono text-[10.5px] font-medium uppercase tracking-[0.05em] text-muted-foreground transition duration-100 hover:bg-muted hover:text-foreground;
+  }
+
+  .seg-button-active {
+    @apply border-border bg-card text-foreground shadow-edge;
+  }
+
+  .checkerboard {
+    background-color: rgb(var(--canvas));
+    background-image:
+      linear-gradient(45deg, rgb(var(--foreground) / 0.035) 25%, transparent 25%),
+      linear-gradient(-45deg, rgb(var(--foreground) / 0.035) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgb(var(--foreground) / 0.035) 75%),
+      linear-gradient(-45deg, transparent 75%, rgb(var(--foreground) / 0.035) 75%);
+    background-size: 16px 16px;
+    background-position:
+      0 0,
+      0 8px,
+      8px -8px,
+      -8px 0;
+  }
+
+  .stage-dots {
+    background-color: rgb(var(--canvas));
+    background-image: radial-gradient(rgb(var(--foreground) / 0.12) 0.7px, transparent 0.7px);
+    background-size: 18px 18px;
+    background-position: center;
+  }
+
+  .hairline-grid {
+    background-image:
+      linear-gradient(to right, rgb(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .slider {
+    @apply h-1 w-full cursor-pointer appearance-none rounded-full bg-muted accent-brand;
+  }
+
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: rgb(var(--foreground));
+    border: 2px solid rgb(var(--card));
+    box-shadow: 0 0 0 1px rgb(var(--border));
+  }
+
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+}
