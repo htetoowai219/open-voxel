@@ -4,6 +4,23 @@ Open-Voxel is an agent-native local studio for building rigged 3D voxel units, d
 
 There is no asset editor and no painted-frame pipeline. A coding agent authors code; the browser renders it live in 3D, captures it through an orthographic game camera, and packs the result into a PNG + JSON atlas in the browser.
 
+## Showcase
+
+### Home Dashboard
+
+![Open-Voxel home dashboard](doc/home.png)
+
+### Studio Walkthrough
+
+A short tour of the unit studio featuring the Burmese Bilu.
+
+<video controls muted loop playsinline preload="metadata" width="100%">
+  <source src="doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4" type="video/mp4" />
+  Your browser does not support embedded video. <a href="doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4">Watch the demo video</a>.
+</video>
+
+[Watch the Burmese Bilu studio demo](doc/%E1%80%98%E1%80%AE%E1%80%9C%E1%80%B0%E1%80%B8.mp4)
+
 ## Features
 
 - **Code-authored voxel units** with nested parts, absolute pivots, palettes, and per-clip parameters.
